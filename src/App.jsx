@@ -14,7 +14,6 @@ function App() {
             <Route index element={<RockPaperScissors />} />
             <Route path="tasks" element={<Tasks />} />
             <Route path="filter" element={<Filter />} />
-            {/* <Route path="*" element={<NoPage />} /> */}
           </Route>
         </Routes>
       </BrowserRouter>

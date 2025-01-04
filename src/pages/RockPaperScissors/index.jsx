@@ -9,28 +9,28 @@ const RockPaperScissors = () => {
   const [yourChoiceValue, setYourChoiceValue] = useState("");
 
   const [message, setMessage] = useState("Click!");
-  function compChooses() {
-    let choices = ["ROCK", "PAPER", "SCISSORS"];
-    setCompChoiceValue(choices[Math.floor(Math.random() * 3)]);
 
-    return compChoiceValue;
-  }
   function rockSelected() {
     console.log("rock clicked");
     setYourChoiceValue("ROCK");
+    let choices = ["ROCK", "PAPER", "SCISSORS"];
+    let value = choices[Math.floor(Math.random() * 3)];
+    setCompChoiceValue(value);
 
-    let compChoiceValue = compChooses();
-    switch (compChoiceValue) {
+    switch (value) {
       case "PAPER":
         setPcPoint(pcPoint + 1);
         setMessage("YOU LOSE");
+
         break;
       case "SCISSORS":
         setYourPoint(yourPoint + 1);
         setMessage("YOU WIN");
+
         break;
       case "ROCK":
         setMessage("IT`S A TIE");
+
         break;
       default:
         break;
@@ -39,8 +39,11 @@ const RockPaperScissors = () => {
   function paperSelected() {
     console.log("paper clicked");
     setYourChoiceValue("PAPER");
-    compChooses();
-    switch (compChoiceValue) {
+    let choices = ["ROCK", "PAPER", "SCISSORS"];
+    let value = choices[Math.floor(Math.random() * 3)];
+    setCompChoiceValue(value);
+
+    switch (value) {
       case "PAPER":
         setMessage("IT`S A TIE");
         break;
@@ -59,10 +62,15 @@ const RockPaperScissors = () => {
   function scissorsSelected() {
     console.log("scissors clicked");
     setYourChoiceValue("SCISSORS");
-    let compChoiceValue = compChooses();
-    switch (compChoiceValue) {
+    let choices = ["ROCK", "PAPER", "SCISSORS"];
+
+    let value = choices[Math.floor(Math.random() * 3)];
+    setCompChoiceValue(value);
+
+    switch (value) {
       case "PAPER":
         setYourPoint(yourPoint + 1);
+
         setMessage("YOU WIN");
         break;
       case "SCISSORS":
